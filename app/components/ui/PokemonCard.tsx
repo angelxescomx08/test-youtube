@@ -8,20 +8,22 @@ import { Pokemon } from '@/app/interfaces/pokemon';
 
 export default function PokemonCard({ name, url }:Pokemon) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={url}
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {name}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+    <Card className='col-span-3 bg-slate-400'>
+      <CardContent>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="140"
+            image={url}
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {name}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </CardContent>
     </Card>
   );
 }
