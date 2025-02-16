@@ -7,11 +7,10 @@ import CardActionArea from '@mui/material/CardActionArea';
 
 type Pokemon = {
   name: string;
-  description: string;
   image: string;
 }
 
-export default function PokemonCard({ name, description, image }:Pokemon) {
+export default function PokemonCard({ name, image }:Pokemon) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -24,9 +23,6 @@ export default function PokemonCard({ name, description, image }:Pokemon) {
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {name}
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
