@@ -23,7 +23,7 @@ export default function PokemonCard({ name, description, image }:Pokemon) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {name}
+            {name}a
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             {description}
