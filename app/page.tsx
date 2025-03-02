@@ -1,7 +1,6 @@
 "use client"
 
-import { Button } from "@mui/material";
-import { getPokemons, getPokemonUrl } from "./utils/get-pokemons";
+import { getPokemonUrl } from "./utils/get-pokemons";
 import { useInfinitePokemons } from "./hooks/useInfinitePokemons";
 import InfiniteScroll from "react-infinite-scroller";
 import { LoaderMoreItems } from "./components/ui/LoaderMoreItems";
