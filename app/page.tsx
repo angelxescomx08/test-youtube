@@ -19,13 +19,13 @@ export default function Home() {
         }}
         hasMore={pokemons.hasNextPage}
         loader={<LoaderMoreItems />}
-        threshold={0}
+        threshold={10}
       >
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-4" key="0">
           {
             pokemons.data?.pages.map(page=>page.results).flat().map(pokemon=>(
               <PokemonCard 
-                key={pokemon.name}
+                key={pokemon.url}
                 name={pokemon.name}
                 url={getPokemonUrl(pokemon.url)}
               />
