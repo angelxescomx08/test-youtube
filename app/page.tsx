@@ -1,37 +1,31 @@
 "use client"
 
-import { getPokemonUrl } from "./utils/get-pokemons";
-import { useInfinitePokemons } from "./hooks/useInfinitePokemons";
-import InfiniteScroll from "react-infinite-scroller";
-import { LoaderMoreItems } from "./components/ui/LoaderMoreItems";
-import PokemonCard from "./components/ui/PokemonCard";
+import { useState } from "react";
+import CustomModal from "./components/CustomModal";
+import { Button } from "@mui/material";
+import { Counter } from "./components/Counter";
 
 export default function Home() {
 
-  const { pokemons } = useInfinitePokemons()
+  const [open,setOpen] = useState(false)
 
   return (
-    <main className="container m-auto">
-      <InfiniteScroll
-        loadMore={(page)=>{
-          pokemons.fetchNextPage()
+    <main className="container m-auto p-5">
+      <Button
+        className="button"
+        onClick={()=>{
+          setOpen(true)
         }}
-        hasMore={pokemons.hasNextPage}
-        loader={<LoaderMoreItems />}
-        threshold={10}
       >
-        <div className="grid grid-cols-12 gap-4" key="0">
-          {
-            pokemons.data?.pages.map(page=>page.results).flat().map(pokemon=>(
-              <PokemonCard 
-                key={pokemon.url}
-                name={pokemon.name}
-                url={getPokemonUrl(pokemon.url)}
-              />
-            ))
-          }
-        </div>
-      </InfiniteScroll>
+        Abrir modal
+      </Button>
+      <Counter />
+      <CustomModal 
+        open={open}
+        onClose={()=>{
+          setOpen(false)
+        }}
+      />
     </main>
   );
 }
