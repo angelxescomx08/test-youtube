@@ -1,30 +1,25 @@
 "use client"
 
-import { useState } from "react";
-import CustomModal from "./components/CustomModal";
+import { useRef } from "react";
+import CustomModal, { RefModal } from "./components/CustomModal";
 import { Button } from "@mui/material";
-import { Counter } from "./components/Counter";
 
 export default function Home() {
 
-  const [open,setOpen] = useState(false)
+  const refModal = useRef<RefModal>(null)
 
   return (
     <main className="container m-auto p-5">
       <Button
         className="button"
         onClick={()=>{
-          setOpen(true)
+          refModal.current?.open()
         }}
       >
         Abrir modal
-      </Button>
-      <Counter />
+        </Button>
       <CustomModal 
-        open={open}
-        onClose={()=>{
-          setOpen(false)
-        }}
+        componentRef={refModal}
       />
     </main>
   );

@@ -1,9 +1,23 @@
 import { Button } from '@mui/material'
-import { useState } from 'react'
+import { Ref, useImperativeHandle, useState } from 'react'
 
-export const Counter = () => {
+export type CounterRef = {
+  count: ()=>number;
+  reset: VoidFunction;
+}
+
+type Props = {
+  counterRef: Ref<CounterRef>
+}
+
+export const Counter = ({ counterRef }:Props) => {
 
   const [count,setCount] = useState(0)
+
+  useImperativeHandle(counterRef,()=>({
+    count: ()=> count,
+    reset: ()=>setCount(0)
+  }),[count])
   
   return (
     <div>
