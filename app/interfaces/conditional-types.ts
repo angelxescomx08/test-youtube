@@ -10,8 +10,15 @@ type Roles<T extends Departamento> = T extends "contabilidad"
 		? RolesInformatica
 		: RolesVentas;
 
-function getRoles<T extends Departamento>(departamento: T, role: Roles<T>) {
-	return `Has elegido a ${role} de ${departamento.toUpperCase()}!`;
+function obtenerPermisos<T extends Departamento>(
+	departamento: T,
+	rol: Roles<T>,
+) {
+	//implementar lógica de devolver roles
+	return {
+		puedeEditar: true,
+		puedeBorrar: true,
+	};
 }
 
-getRoles("ventas", "marketing");
+obtenerPermisos("ventas", "vendedor");
