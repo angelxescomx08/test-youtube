@@ -11,7 +11,7 @@ function calculateState() {
 export default function Home() {
 	const [count, setCount] = useState(calculateState);
 	const [user, setUser] = useState({
-		name: "Angel",
+		name: "My user",
 		age: 20,
 	});
 
@@ -21,8 +21,8 @@ export default function Home() {
 				<Button
 					className="button"
 					onClick={() => {
-						setCount((prev) => prev - 5);
-						setCount((prev) => prev - 5);
+						setCount(count + 5);
+						setCount(count + 5);
 					}}
 				>
 					-10
