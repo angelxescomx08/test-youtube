@@ -7,5 +7,5 @@ body{
 }
 
 .button{
-  @apply bg-[#a9cec2] text-black hover:bg-[#a9cec2] hover:text-black font-medium;
+  @apply bg-[#8083ff] text-white hover:bg-[#8083ff] hover:text-white font-semibold;
 }
