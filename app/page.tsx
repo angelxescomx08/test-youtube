@@ -1,12 +1,9 @@
+import { Suspense } from "react";
 import { PostCard } from "./components/PostCard";
 import { Post } from "./interfaces/posts";
 
 export default async function Home() {
-	const posts = await fetch("http://localhost:3000/api/posts", {
-		next: {
-			revalidate: 60,
-		},
-	})
+	const posts = await fetch("http://localhost:3000/api/posts")
 		.then((res) => res.json())
 		.then((data) => data as Post[])
 		.catch((err) => []);
