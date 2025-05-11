@@ -1,28 +1,22 @@
-import {
-	SignedIn,
-	SignedOut,
-	SignInButton,
-	SignUpButton,
-	UserButton,
-} from "@clerk/nextjs";
-import { Button } from "@mui/material";
+import Image from "next/image";
+import LazyImage from "./components/lazy-image/LazyImage";
 
 export default function Home() {
 	return (
 		<main className="container m-auto p-5">
-			<div className="flex flex-wrap gap-4">
-				<SignedOut>
-					<SignInButton>
-						<Button className="button">Sign in</Button>
-					</SignInButton>
-					<SignUpButton>
-						<Button className="button">Sign up</Button>
-					</SignUpButton>
-				</SignedOut>
-				<SignedIn>
-					<UserButton />
-				</SignedIn>
-			</div>
+			<LazyImage
+				src="/img/1.jpg"
+				placeholderSrc="/img/1-small.jpg"
+				alt="Imagen de fondo"
+			/>
+			<Image
+				src="/img/1.jpg"
+				alt="My Image"
+				width={1496}
+				height={1000}
+				placeholder="blur"
+				blurDataURL="/img/1-small.jpg"
+			/>
 		</main>
 	);
 }
