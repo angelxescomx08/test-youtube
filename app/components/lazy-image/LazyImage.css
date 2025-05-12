@@ -1,0 +1,52 @@
+.blurred-img {
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+  background-repeat: no-repeat;
+}
+
+.blurred-img img{
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+  -webkit-transition: opacity 250ms ease-in-out;
+  -moz-transition: opacity 250ms ease-in-out;
+  -ms-transition: opacity 250ms ease-in-out;
+  -o-transition: opacity 250ms ease-in-out;
+  display: block;
+}
+
+.blurred-img.loaded img{
+  opacity: 1;
+}
+
+.blurred-img::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 2.5s infinite;
+  -webkit-animation: pulse 2.5s infinite;
+  background-color: #fff;
+  opacity: 0;
+  z-index: 1;
+}
+
+.blurred-img.loaded::before{
+  animation: none;
+  content: none;
+  -webkit-animation: none;
+}
+
+@keyframes pulse {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: .1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
