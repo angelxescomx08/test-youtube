@@ -1,4 +1,5 @@
 "use client";
+
 import { LenisRef, ReactLenis } from "lenis/react";
 import {
 	motion,
@@ -26,14 +27,23 @@ export default function ScrollTextBgClip() {
 		offset: ["start start", "end end"],
 	});
 
-	// Animaciones
-	const maskSize = useTransform(scrollYProgress, [0, 1], ["4000%", "50%"]);
+	// Dividimos el salto de 4000% a 50% en 3 tramos:
+	// 4000% → 1000% → 300% → 50%
+	const maskSize = useTransform(
+		scrollYProgress,
+		[0, 0.4, 0.7, 1],
+		["4000%", "1000%", "300%", "50%"],
+	);
+
 	const scale = useTransform(scrollYProgress, [0, 0.3], [1.2, 1]);
 	const textWhiteOpacity = useTransform(scrollYProgress, [0.9, 1], [0, 1]);
 
 	return (
 		<ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
-			<div ref={ref} className="relative h-[200vh] w-full bg-black">
+			<div
+				ref={ref}
+				className="relative h-[200vh] w-full bg-black overflow-hidden"
+			>
 				{/* Imagen de fondo con máscara */}
 				<motion.div
 					className="w-full h-screen fixed inset-0 z-0"
