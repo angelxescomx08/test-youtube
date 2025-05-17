@@ -48,6 +48,7 @@ export default function ScrollTextBgClip() {
 						maskRepeat: "no-repeat",
 						maskPosition: "center",
 						maskSize: maskSize,
+						willChange: "transform, maskSize, opacity",
 					}}
 				/>
 
@@ -65,6 +66,7 @@ export default function ScrollTextBgClip() {
 						maskRepeat: "no-repeat",
 						maskPosition: "center",
 						maskSize: maskSize,
+						willChange: "transform, maskSize, opacity",
 					}}
 				/>
 			</div>
