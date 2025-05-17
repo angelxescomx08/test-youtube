@@ -12,7 +12,9 @@ export default function ScrollTextBgClip() {
 	});
 
 	// Escala de 200% a 100%
-	const maskSize = useTransform(scrollYProgress, [0, 1], ["4000%", "50%"]);
+	const maskSize = useTransform(scrollYProgress, [0, 1], ["5000%", "50%"]);
+
+	const scale = useTransform(scrollYProgress, [0, 0.3], [1.2, 1]);
 
 	return (
 		<ReactLenis root>
@@ -21,11 +23,12 @@ export default function ScrollTextBgClip() {
 					className="w-full h-screen fixed inset-0"
 					style={{
 						background: "url('/img/1.jpg') center/cover no-repeat",
+						scale,
 						WebkitMaskImage: "url('/img/ANGEL SOFTWARE DEV.png')",
 						WebkitMaskRepeat: "no-repeat",
 						WebkitMaskPosition: "center",
 						WebkitMaskSize: maskSize,
-						maskImage: "url('/img/ANGEL-SOFTWARE-DEV.png')",
+						maskImage: "url('/img/ANGEL SOFTWARE DEV.png')",
 						maskRepeat: "no-repeat",
 						maskPosition: "center",
 						maskSize: maskSize,
