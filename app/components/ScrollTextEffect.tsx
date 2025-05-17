@@ -27,7 +27,7 @@ export default function ScrollTextBgClip() {
 	});
 
 	// Animaciones
-	const maskSize = useTransform(scrollYProgress, [0, 1], ["5000%", "50%"]);
+	const maskSize = useTransform(scrollYProgress, [0, 1], ["4000%", "50%"]);
 	const scale = useTransform(scrollYProgress, [0, 0.3], [1.2, 1]);
 	const textWhiteOpacity = useTransform(scrollYProgress, [0.9, 1], [0, 1]);
 
@@ -40,11 +40,11 @@ export default function ScrollTextBgClip() {
 					style={{
 						background: "url('/img/1.jpg') center/cover no-repeat",
 						scale,
-						WebkitMaskImage: "url('/img/ANGEL SOFTWARE DEV.png')",
+						WebkitMaskImage: "url('/img/ANGEL SOFTWARE DEV.svg')",
 						WebkitMaskRepeat: "no-repeat",
 						WebkitMaskPosition: "center",
 						WebkitMaskSize: maskSize,
-						maskImage: "url('/img/ANGEL SOFTWARE DEV.png')",
+						maskImage: "url('/img/ANGEL SOFTWARE DEV.svg')",
 						maskRepeat: "no-repeat",
 						maskPosition: "center",
 						maskSize: maskSize,
@@ -58,11 +58,11 @@ export default function ScrollTextBgClip() {
 					style={{
 						backgroundColor: "white",
 						opacity: textWhiteOpacity,
-						WebkitMaskImage: "url('/img/ANGEL SOFTWARE DEV.png')",
+						WebkitMaskImage: "url('/img/ANGEL SOFTWARE DEV.svg')",
 						WebkitMaskRepeat: "no-repeat",
 						WebkitMaskPosition: "center",
 						WebkitMaskSize: maskSize,
-						maskImage: "url('/img/ANGEL SOFTWARE DEV.png')",
+						maskImage: "url('/img/ANGEL SOFTWARE DEV.svg')",
 						maskRepeat: "no-repeat",
 						maskPosition: "center",
 						maskSize: maskSize,
