@@ -33,7 +33,6 @@ export default function ScrollTextBgClip() {
 		[0, 0.4, 0.7, 1],
 		["4000%", "1000%", "300%", "50%"],
 	);
-
 	const scale = useTransform(scrollYProgress, [0, 0.3], [1.2, 1]);
 	const textWhiteOpacity = useTransform(scrollYProgress, [0.6, 1], [0, 1]);
 
