@@ -24,7 +24,6 @@ export default function ScrollTextBgClip() {
 
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		offset: ["start start", "end end"],
 	});
 
 	// Dividimos el salto de 4000% a 50% en 3 tramos:
@@ -36,7 +35,7 @@ export default function ScrollTextBgClip() {
 	);
 
 	const scale = useTransform(scrollYProgress, [0, 0.3], [1.2, 1]);
-	const textWhiteOpacity = useTransform(scrollYProgress, [0.9, 1], [0, 1]);
+	const textWhiteOpacity = useTransform(scrollYProgress, [0.6, 1], [0, 1]);
 
 	return (
 		<ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
@@ -58,7 +57,6 @@ export default function ScrollTextBgClip() {
 						maskRepeat: "no-repeat",
 						maskPosition: "center",
 						maskSize: maskSize,
-						willChange: "transform, maskSize, opacity",
 					}}
 				/>
 
@@ -76,7 +74,6 @@ export default function ScrollTextBgClip() {
 						maskRepeat: "no-repeat",
 						maskPosition: "center",
 						maskSize: maskSize,
-						willChange: "transform, maskSize, opacity",
 					}}
 				/>
 			</div>
