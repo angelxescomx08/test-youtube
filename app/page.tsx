@@ -1,9 +1,9 @@
-import { ScrollAnimation } from "@/app/components/ScrollAnimation";
+import Parallax from "./components/Parallax";
 
 export default function Home() {
 	return (
 		<main>
-			<ScrollAnimation />
+			<Parallax />
 		</main>
 	);
 }
