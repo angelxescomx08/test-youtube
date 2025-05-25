@@ -74,11 +74,6 @@ export default function Parallax() {
 						fill
 					/>
 				</motion.div>
-				{/* Contenido encima del parallax */}
-				<div className="relative z-30 mt-[100vh] text-white text-center px-4">
-					<h1 className="text-5xl font-bold mb-4">Efecto Parallax</h1>
-					<p className="text-lg">Desplázate para ver el efecto</p>
-				</div>
 			</div>
 		</ReactLenis>
 	);
