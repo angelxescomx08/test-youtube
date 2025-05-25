@@ -19,7 +19,7 @@ export default function Parallax() {
 		target: ref,
 	});
 
-	const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+	const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 	const middleY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 	const foregroundY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
 
